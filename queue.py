@@ -35,3 +35,12 @@ class QueueClass:
     def is_empty(self):
         """ to check if is empty """
         return self.head is None
+
+    def de_queue(self):
+        """ to remove the first element (First In First Out) """
+        if self.is_empty():
+            return
+        if self.head == self.last:
+            self.head = self.last = None
+            return
+        self.head = self.head.next

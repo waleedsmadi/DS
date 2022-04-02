@@ -1,6 +1,8 @@
 # AVL tree is a self-balancing Binary Search Tree (BST)
 # where the difference between heights of left and right
 # subtrees cannot be more than one for all nodes.
+import sys
+
 
 class Node:
     """ Node to initialize value, left, right and height """
@@ -146,3 +148,19 @@ class AVLTree:
             print("{0} ".format(root.value), end="")
             self.pre_order(root.left)
             self.pre_order(root.right)
+
+        # Print the tree
+    def print_helper(self, curr_ptr, indent, last):
+        """ to print the tree in pretty way """
+
+        if curr_ptr is not None:
+            sys.stdout.write(indent)
+            if last:
+                sys.stdout.write("R----")
+                indent += "     "
+            else:
+                sys.stdout.write("L----")
+                indent += "|    "
+            print(curr_ptr.value)
+            self.print_helper(curr_ptr.left, indent, False)
+            self.print_helper(curr_ptr.right, indent, True)

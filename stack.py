@@ -22,3 +22,15 @@ class Stack:
     def __init__(self):
         self.top = None
 
+    def push(self, element):
+        """ push function"""
+
+        # create the new element
+        new_element = Node(element)
+
+        if self.top is None:
+            self.top = new_element
+            return
+        new_element.next = self.top
+        self.top = new_element
+

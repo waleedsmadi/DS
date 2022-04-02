@@ -37,4 +37,11 @@ class Stack:
     def is_empty(self):
         return self.top is None
 
+    def pop(self):
+        if self.is_empty():
+            return
+        value = self.top.value
+        self.top = self.top.next
+        return value
+
 

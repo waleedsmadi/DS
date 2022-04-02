@@ -54,3 +54,14 @@ class QueueClass:
             elem.append(curr_node.value)
             curr_node = curr_node.next
         print(elem)
+
+
+q = QueueClass()
+q.queue(1)
+q.queue(2)
+q.queue(3)
+q.queue(4)
+q.queue(5)
+q.de_queue()
+q.display()
+# [2, 3, 4, 5]

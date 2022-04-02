@@ -24,3 +24,16 @@ class LinkedList:
 
     def __init__(self):
         self.head = Node()
+
+    def remove(self, element):
+
+        # check if is empty
+
+        curr_node = self.head
+        while curr_node.next is not None:
+            prev = curr_node
+            curr_node = curr_node.next
+            if curr_node.value == element:
+                prev.next = curr_node.next
+                return
+        print("this element does not exists!")

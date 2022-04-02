@@ -19,3 +19,9 @@ class AVLTree:
         if not root:
             return 0
         return root.height
+
+    def get_min(self, root):
+        """ gin minimum value of the tree """
+        if not root.left:
+            return root
+        return self.get_height(root.left)

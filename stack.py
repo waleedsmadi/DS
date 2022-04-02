@@ -49,3 +49,10 @@ class Stack:
             return
         return self.top.value
 
+    def display(self):
+        elem = []
+        curr_node = self.top
+        while curr_node is not None:
+            elem.append(curr_node.value)
+            curr_node = curr_node.next
+        print(elem)

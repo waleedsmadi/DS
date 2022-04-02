@@ -7,6 +7,7 @@
 #
 # (functions)
 # add(element)
+# is_empty()
 # remove(element)
 # pop()
 # peek()
@@ -33,7 +34,7 @@ class LinkedList:
 
         # if condition for the first element
         if self.head.next is None:
-            self.head = new_node
+            self.head.next = new_node
             return
 
         # go to the end of list to add the new element
@@ -92,5 +93,3 @@ class LinkedList:
             curr_node = curr_node.next
             elem.append(curr_node.value)
         print(elem)
-
-

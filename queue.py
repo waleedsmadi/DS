@@ -32,3 +32,6 @@ class QueueClass:
         self.last.next = new_element
         self.last = new_element
 
+    def is_empty(self):
+        """ to check if is empty """
+        return self.head is None

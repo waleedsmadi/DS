@@ -30,3 +30,31 @@ class AVLTree:
         if not root:
             return 0
         return self.get_height(root.left) - self.get_height(root.right)
+
+    def l_rotation(self, x):
+        """ left rotation function """
+
+        y = x.right
+        t = y.left
+        y.left = x
+        x.right = t
+
+        # update the height
+        x.height = 1 + max(self.get_height(x.left), self.get_height(x.right))
+        y.height = 1 + max(self.get_height(y.left), self.get_height(y.right))
+
+        return y
+
+    def r_rotation(self, x):
+        """ right rotation function """
+
+        y = x.left
+        t = y.right
+        y.right = x
+        x.left = t
+
+        # update the height
+        x.height = 1 + max(self.get_height(x.left), self.get_height(x.right))
+        y.height = 1 + max(self.get_height(y.left), self.get_height(y.right))
+
+        return y

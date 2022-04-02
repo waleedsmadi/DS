@@ -139,3 +139,10 @@ class AVLTree:
                 return self.r_rotation(root)
 
         return root
+
+    def pre_order(self, root):
+        """ display the tree in pre-order way """
+        if root:
+            print("{0} ".format(root.value), end="")
+            self.pre_order(root.left)
+            self.pre_order(root.right)

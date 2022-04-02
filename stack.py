@@ -44,4 +44,8 @@ class Stack:
         self.top = self.top.next
         return value
 
+    def peek(self):
+        if self.is_empty():
+            return
+        return self.top.value
 

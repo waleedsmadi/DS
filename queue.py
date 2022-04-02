@@ -19,4 +19,16 @@ class QueueClass:
     def __init__(self):
         self.head = self.last = None
 
+    def queue(self, element):
+        """ to add an element to the queue """
+        new_element = Node(element)
+
+        # for first insertion case
+        if not self.head:
+            self.head = self.last = new_element
+            return
+
+        # move the last pointer to the last element
+        self.last.next = new_element
+        self.last = new_element
 

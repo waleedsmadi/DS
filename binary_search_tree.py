@@ -51,3 +51,9 @@ class BinarySearchTree:
                 root.right = self.remove(root.right, val)
 
         return root
+
+    def in_order(self, root):
+        if root:
+            self.in_order(root.left)
+            print(root.value)
+            self.in_order(root.right)

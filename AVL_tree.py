@@ -164,3 +164,17 @@ class AVLTree:
             print(curr_ptr.value)
             self.print_helper(curr_ptr.left, indent, False)
             self.print_helper(curr_ptr.right, indent, True)
+
+
+# drive the program
+myTree = AVLTree()
+
+root = None
+nums = [33, 13, 52, 9, 21, 61, 8, 11]
+for num in nums:
+    root = myTree.insert(root, num)
+myTree.print_helper(root, "", True)
+key = 13
+root = myTree.remove(root, key)
+print("After Deletion: ")
+myTree.print_helper(root, "", True)

@@ -35,9 +35,11 @@ class Stack:
         self.top = new_element
 
     def is_empty(self):
+        """ check if is empty """
         return self.top is None
 
     def pop(self):
+        """ return the last value of the array and remove it """
         if self.is_empty():
             return
         value = self.top.value
@@ -45,11 +47,13 @@ class Stack:
         return value
 
     def peek(self):
+        """ return the last value of the array """
         if self.is_empty():
             return
         return self.top.value
 
     def display(self):
+        """ Display the array """
         elem = []
         curr_node = self.top
         while curr_node is not None:

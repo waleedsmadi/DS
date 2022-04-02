@@ -27,6 +27,7 @@ class BinarySearchTree:
         # put the element on the right side
         elif element > root.value:
             root.right = self.insert(root.right, element)
+        return root
 
     def get_min(self, root):
         """ git minimum value in the tree """
@@ -72,3 +73,22 @@ class BinarySearchTree:
             self.in_order(root.left)
             print(root.value)
             self.in_order(root.right)
+
+b = BinarySearchTree()
+root = None
+root = b.insert(root, 10)
+root = b.insert(root, 20)
+root = b.insert(root, 6)
+root = b.insert(root, 5)
+root = b.insert(root, 7)
+root = b.insert(root, 30)
+root = b.insert(root, 15)
+root = b.insert(root, 25)
+
+print("Before Delete: ")
+b.in_order(root)
+
+root = b.remove(root, 20)
+
+print("\n\nAfter Delete: ")
+b.in_order(root)

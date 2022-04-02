@@ -25,3 +25,8 @@ class AVLTree:
         if not root.left:
             return root
         return self.get_height(root.left)
+
+    def get_balance(self, root):
+        if not root:
+            return 0
+        return self.get_height(root.left) - self.get_height(root.right)

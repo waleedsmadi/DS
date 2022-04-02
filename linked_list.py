@@ -24,3 +24,15 @@ class LinkedList:
 
     def __init__(self):
         self.head = Node()
+
+    def pop(self):
+        # check if is empty
+
+        curr_node = self.head
+        prev = None
+        while curr_node.next is not None:
+            prev = curr_node
+            curr_node = curr_node.next
+        last_element = curr_node.value
+        prev.next = None
+        return last_element

@@ -44,3 +44,13 @@ class QueueClass:
             self.head = self.last = None
             return
         self.head = self.head.next
+
+    def display(self):
+        """ display the queue """
+
+        elem = []
+        curr_node = self.head
+        while curr_node is not None:
+            elem.append(curr_node.value)
+            curr_node = curr_node.next
+        print(elem)

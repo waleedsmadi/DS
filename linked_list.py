@@ -24,3 +24,12 @@ class LinkedList:
 
     def __init__(self):
         self.head = Node()
+
+    def display(self):
+        elem = []
+
+        curr_node = self.head
+        while curr_node.next is not None:
+            curr_node = curr_node.next
+            elem.append(curr_node.value)
+        print(elem)

@@ -29,23 +29,33 @@ class BinarySearchTree:
             root.right = self.insert(root.right, element)
 
     def get_min(self, root):
+        """ git minimum value in the tree """
         if not root.left:
             return root
         return self.get_min(root.left)
 
     def remove(self, root, element):
+        """ remove an element from the tree """
+
+        # if tree is empty return root
         if not root:
             return root
+
+        # searching about the element to remove
         if element < root.value:
             root.left = self.remove(root.left, element)
         elif element > root.value:
             root.right = self.remove(root.right, element)
+
+        # means the element is exists
         else:
-            if not root.left:
+            if not root.left:  # right child case
                 return root.right
-            elif not root.right:
+
+            elif not root.right:  # left child case
                 return root.left
-            else:
+
+            else:  # two children case
                 val = self.get_min(root.right).value
                 root.value = val
                 root.right = self.remove(root.right, val)
@@ -53,6 +63,11 @@ class BinarySearchTree:
         return root
 
     def in_order(self, root):
+        """ display the tree with in_order way """
+
+        # print left child
+        # print root
+        # print right child
         if root:
             self.in_order(root.left)
             print(root.value)

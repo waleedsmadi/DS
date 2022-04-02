@@ -62,3 +62,16 @@ class LinkedList:
 
         print("this element does not exists!")
 
+    def pop(self):
+        if self.is_empty():
+            return
+
+        curr_node = self.head
+        prev = None
+        while curr_node.next is not None:
+            prev = curr_node
+            curr_node = curr_node.next
+        last_element = curr_node.value
+        prev.next = None
+        return last_element
+

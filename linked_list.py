@@ -24,3 +24,11 @@ class LinkedList:
 
     def __init__(self):
         self.head = Node()
+
+    def peek(self):
+        # check if is empty
+
+        curr_node = self.head
+        while curr_node.next is not None:
+            curr_node = curr_node.next
+        return curr_node.value

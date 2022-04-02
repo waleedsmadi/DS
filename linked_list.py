@@ -75,3 +75,12 @@ class LinkedList:
         prev.next = None
         return last_element
 
+    def peek(self):
+        if self.is_empty():
+            return
+
+        curr_node = self.head
+        while curr_node.next is not None:
+            curr_node = curr_node.next
+        return curr_node.value
+

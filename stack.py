@@ -34,3 +34,7 @@ class Stack:
         new_element.next = self.top
         self.top = new_element
 
+    def is_empty(self):
+        return self.top is None
+
+

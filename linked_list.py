@@ -24,3 +24,24 @@ class LinkedList:
 
     def __init__(self):
         self.head = Node()
+
+    def add(self, element):
+        """ add function """
+
+        # the new node
+        new_node = Node(element)
+
+        # if condition for the first element
+        if self.head.next is None:
+            self.head = new_node
+            return
+
+        # go to the end of list to add the new element
+        curr_node = self.head
+        while curr_node.next is not None:
+            curr_node = curr_node.next
+
+        # add the new element
+        curr_node.next = new_node
+
+

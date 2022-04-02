@@ -24,3 +24,6 @@ class LinkedList:
 
     def __init__(self):
         self.head = Node()
+
+    def is_empty(self):
+        return self.head.next is None

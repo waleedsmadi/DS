@@ -47,3 +47,18 @@ class LinkedList:
     def is_empty(self):
         return self.head.next is None
 
+    def remove(self, element):
+
+        if self.is_empty():
+            return
+
+        curr_node = self.head
+        while curr_node.next is not None:
+            prev = curr_node
+            curr_node = curr_node.next
+            if curr_node.value == element:
+                prev.next = curr_node.next
+                return
+
+        print("this element does not exists!")
+

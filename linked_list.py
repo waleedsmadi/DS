@@ -44,4 +44,6 @@ class LinkedList:
         # add the new element
         curr_node.next = new_node
 
+    def is_empty(self):
+        return self.head.next is None
 

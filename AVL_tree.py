@@ -58,3 +58,37 @@ class AVLTree:
         y.height = 1 + max(self.get_height(y.left), self.get_height(y.right))
 
         return y
+
+    def insert(self, root, element):
+        """ to insert elements to the tree """
+
+        # searching about the right place to add the element
+        if not root:
+            return Node(element)
+        elif element < root.value:
+            root.left = self.insert(root.left, element)
+        elif element > root.value:
+            root.right = self.insert(root.right, element)
+
+        # update the height
+        root.height = 1 + max(self.get_height(root.left), self.get_height(root.right))
+
+        balance_factor = self.get_balance(root)
+
+        if balance_factor < -1:  # means it's a left rotation
+            if element > root.right.value:  # means it's left-left rotation
+                return self.l_rotation(root)
+
+            else:  # means it's left-right rotation
+                root.right = self.r_rotation(root.right)
+                return self.l_rotation(root)
+
+        if balance_factor > 1:  # means it's a right rotation
+            if element < root.left.value:  # means it's right-right rotation
+                return self.r_rotation(root)
+
+            else:  # means it's right-left rotation
+                root.left = self.l_rotation(root.left)
+                return self.r_rotation(root)
+
+        return root
